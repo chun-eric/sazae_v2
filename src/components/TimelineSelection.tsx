@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
-import { Timeline } from "./ui/timelines";
+import { Timeline as TimeLineComponent } from "./ui/timelines";
 
-export function TimelineDemo() {
+export function TimelineSelection() {
   const data = [
     {
       title: "2024",
@@ -149,7 +149,7 @@ export function TimelineDemo() {
   ];
   return (
     <div className="relative w-full overflow-clip">
-      <Timeline data={data} />
+      <TimeLineComponent data={data} />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import {
   ArrowRight, 
   CheckCircle
 } from 'lucide-react';
+import Image from "next/image";
 
 const PlatformExpert: React.FC = () => {
   const [hoveredPlatform, setHoveredPlatform] = useState<string | null>(null);
@@ -18,7 +19,7 @@ const PlatformExpert: React.FC = () => {
       name: 'Odoo ERP',
       tagline: 'Scale Your Japanese Business Globally',
       description: 'Complete ERP management across Japan, Australia & Vietnam operations',
-      logo: 'https://www.odoo.com/web/image/website/1/logo/Odoo?unique=689cb34',
+      logo: '/logos/odoo.png',
       logoAlt: 'Odoo Logo',
       gradient: 'from-purple-500 to-purple-700',
       features: [
@@ -34,7 +35,7 @@ const PlatformExpert: React.FC = () => {
       name: 'HubSpot CRM',
       tagline: 'Japanese Sales Excellence',
       description: 'CRM that respects Japanese business practices while enabling international growth',
-      logo: 'https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png',
+      logo: '/logos/hubspot.png',
       logoAlt: 'HubSpot Logo',
       gradient: 'from-orange-500 to-red-600',
       features: [
@@ -67,7 +68,7 @@ const PlatformExpert: React.FC = () => {
       name: 'ServiceNow',
       tagline: 'Enterprise Operations',
       description: 'Workflow automation that maintains your quality standards globally',
-      logo: 'https://logos-world.net/wp-content/uploads/2021/04/ServiceNow-Logo.png',
+      logo: '/logos/servicenow.png',
       logoAlt: 'ServiceNow Logo',
       gradient: 'from-gray-700 to-gray-900',
       features: [
@@ -83,7 +84,7 @@ const PlatformExpert: React.FC = () => {
       name: 'Acquia Drupal',
       tagline: 'International Digital Presence',
       description: 'Drupal expertise for consistent brand experience internationally',
-      logo: 'https://www.acquia.com/sites/default/files/2021-09/acquia-logo-white.svg',
+      logo: '/logos/acquia.png',
       logoAlt: 'Acquia Logo',
       gradient: 'from-blue-400 to-cyan-600',
       features: [
@@ -99,7 +100,7 @@ const PlatformExpert: React.FC = () => {
       name: 'Mendix Low-Code',
       tagline: 'Custom Solutions for Japanese Business',
       description: 'Low-code development that understands your unique requirements',
-      logo: 'https://www.mendix.com/wp-content/uploads/mendix-logo-blue.svg',
+      logo: '/logos/mendix.jpg',
       logoAlt: 'Mendix Logo',
       gradient: 'from-cyan-500 to-blue-600',
       features: [
@@ -121,7 +122,7 @@ const PlatformExpert: React.FC = () => {
           <Badge className="mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 px-4 py-2">
             🚀 Platform Expertise
           </Badge>
-          <h2 className="text-6xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-6xl md:text-5xl font-bold text-gray-900 mb-8 mt-4 height-auto leading-tight">
             Your Trusted SaaS Partner Across 
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
               Three Strategic Markets
@@ -139,7 +140,7 @@ const PlatformExpert: React.FC = () => {
         <div className="flex justify-center mb-16">
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-blue-100">
             <div className="flex items-center justify-center space-x-8">
-              <div className="text-center">
+               <div className="text-center flex flex-col items-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mb-3">
                   <span className="text-2xl">🇯🇵</span>
                 </div>
@@ -149,7 +150,7 @@ const PlatformExpert: React.FC = () => {
               <div className="flex items-center">
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
-              <div className="text-center">
+               <div className="text-center flex flex-col items-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-3">
                   <span className="text-2xl">🇦🇺</span>
                 </div>
@@ -159,7 +160,7 @@ const PlatformExpert: React.FC = () => {
               <div className="flex items-center">
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
-              <div className="text-center">
+              <div className="text-center flex flex-col items-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-yellow-500 rounded-full flex items-center justify-center mb-3">
                   <span className="text-2xl">🇻🇳</span>
                 </div>
@@ -195,15 +196,13 @@ const PlatformExpert: React.FC = () => {
                   <div className="flex-shrink-0">
                     {/* Company Logo */}
                     <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center p-2">
-                      <img 
-                        src={platform.logo} 
-                        alt={platform.logoAlt}
-                        className="max-w-full max-h-full object-contain filter brightness-0 invert"
-                        onError={(e) => {
-                          // Fallback to platform-specific icon if logo fails to load
-                          console.log(`Logo failed to load for ${platform.name}`);
-                        }}
-                      />
+                     <Image
+                      src={platform.logo}
+                      alt={platform.logoAlt}
+                      width={64}
+                      height={64}
+                      className="max-w-full max-h-full object-contain filter brightness-0 invert bg-transparent"
+/>
                     </div>
                   </div>
                 </div>
@@ -220,7 +219,7 @@ const PlatformExpert: React.FC = () => {
                 {/* Key Features */}
                 <div className="space-y-3 mb-6">
                   <div className="text-sm font-semibold text-gray-800 mb-2">Key Capabilities:</div>
-                  {platform.features.slice(0, hoveredPlatform === platform.id ? 4 : 4).map((feature, index) => (
+                  {platform.features.map((feature, index) => (
                     <div key={index} className="flex items-center space-x-2">
                       <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                       <span className="text-sm text-gray-700">{feature}</span>

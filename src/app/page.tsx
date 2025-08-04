@@ -51,7 +51,7 @@ import {
 } from 'lucide-react';
 import Hero from "@/components/Hero";
 import PlatformExpert from "@/components/PlatformExpert";
-import { Timeline } from "@/components/Timeline";
+import { Timeline, TimelineSelection } from "@/components/TimelineSelection";
 
 // Types for better TypeScript support
 interface StoryStepProps {
@@ -302,7 +302,7 @@ const SazaeHomepage: React.FC = () => {
     {/* Import Hero */}
     <Hero/>
     <PlatformExpert/>
-    <Timeline/>
+    <TimelineSelection/>
 
       {/* Our Expertise */}
       <section className="py-16 bg-white">
@@ -402,25 +402,7 @@ const SazaeHomepage: React.FC = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section id="services" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              SaaS Solutions We Specialize In
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From ERP implementation to low-code development, we deliver comprehensive SaaS solutions tailored to your business needs.
-            </p>
-          </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Geographic Presence */}
       <section className="py-16 bg-gradient-to-r from-blue-500 to-cyan-500 text-white">
@@ -509,201 +491,9 @@ const SazaeHomepage: React.FC = () => {
         </div>
       </section>
 
-      {/* Lead Capture Form */}
-      {/* <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="absolute top-10 right-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-300/10 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Transform Your Business Systems?
-            </h2>
-            <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Get your free Digital Readiness Assessment and discover how SaaS solutions can streamline your operations and accelerate growth.
-            </p>
-          </div>
+     
 
-          <Card className="bg-white/95 backdrop-blur-sm text-gray-900 border-0 shadow-2xl">
-            <CardHeader className="text-center pb-6">
-              <CardTitle className="text-2xl text-gray-800 mb-2">
-                Free Digital Readiness Assessment
-              </CardTitle>
-              <CardDescription className="text-lg text-gray-600">
-                Discover your transformation opportunities in just 5 minutes
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="p-8">
-              <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-gray-700 font-semibold">Full Name *</Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      placeholder="Your full name"
-                      className="border-2 border-gray-200 focus:border-blue-500 transition-colors"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-gray-700 font-semibold">Business Email *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      placeholder="your@company.com"
-                      className="border-2 border-gray-200 focus:border-blue-500 transition-colors"
-                      required
-                    />
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="company" className="text-gray-700 font-semibold">Company Name *</Label>
-                  <Input
-                    id="company"
-                    value={formData.company}
-                    onChange={(e) => setFormData({...formData, company: e.target.value})}
-                    placeholder="Your company name"
-                    className="border-2 border-gray-200 focus:border-blue-500 transition-colors"
-                    required
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="companySize" className="text-gray-700 font-semibold">Company Size</Label>
-                  <Select value={formData.companySize} onValueChange={(value) => setFormData({...formData, companySize: value})}>
-                    <SelectTrigger className="border-2 border-gray-200 focus:border-blue-500">
-                      <SelectValue placeholder="Select company size" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="1-10">1-10 employees</SelectItem>
-                      <SelectItem value="11-50">11-50 employees</SelectItem>
-                      <SelectItem value="51-100">51-100 employees</SelectItem>
-                      <SelectItem value="101-500">101-500 employees</SelectItem>
-                      <SelectItem value="500+">500+ employees</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="challenge" className="text-gray-700 font-semibold">Primary Business Challenge</Label>
-                  <Textarea
-                    id="challenge"
-                    value={formData.challenge}
-                    onChange={(e) => setFormData({...formData, challenge: e.target.value})}
-                    placeholder="What's your biggest operational or technology challenge right now?"
-                    rows={4}
-                    className="border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
-                  />
-                </div>
-                
-                <Button 
-                  type="button" 
-                  size="lg" 
-                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 py-4"
-                  onClick={handleFormSubmit}
-                >
-                  <Zap className="mr-2 h-5 w-5" />
-                  Get My Free Assessment
-                </Button>
-              </div>
-              
-              <div className="text-center text-sm text-gray-600 mt-6 flex items-center justify-center space-x-2">
-                <Shield className="h-4 w-4" />
-                <span>Your information is secure and will never be shared. You'll receive your personalized assessment within 24 hours.</span>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section> */}
-
-      {/* Footer */}
-      {/* <footer className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-4 gap-8 mb-12">
-            <div className="lg:col-span-2">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">S</span>
-                </div>
-                <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Sazae
-                </div>
-              </div>
-              <p className="text-gray-400 mb-6 text-lg leading-relaxed">
-                Boutique team of IT consultants, business strategists, and technology architects. 
-                We assess your digital presence, identify growth opportunities, and enhance operational efficiencies.
-              </p>
-              <div className="space-y-2 text-gray-400">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-blue-400" />
-                  <span>Level 5, 115 Pitt Street, Sydney NSW 2000, Australia</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-cyan-400" />
-                  <span>+61 439 999 650</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-blue-400" />
-                  <span>hello@sazae.com.au</span>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-6 text-white">Our Services</h3>
-              <ul className="space-y-3 text-gray-400">
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Odoo ERP Implementation</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">ServiceNow Solutions</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">HubSpot CRM & Marketing</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Boomi Integration</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Mendix Low-Code</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Drupal Development</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Digital Transformation</li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-6 text-white">Company</h3>
-              <ul className="space-y-3 text-gray-400">
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">About Sazae</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Our Story</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Success Stories</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Blog & Insights</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Partnerships</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Contact Us</li>
-                <li className="hover:text-blue-400 transition-colors cursor-pointer">Japan-Australia Bridge</li>
-              </ul>
-            </div>
-          </div> */}
-          
-          {/* Bottom Footer */}
-          {/* <div className="border-t border-gray-800 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-gray-400 text-sm">
-                &copy; 2025 Sazae Pty Ltd. All rights reserved.
-              </div>
-              <div className="flex space-x-6 text-gray-400 text-sm">
-                <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a>
-              </div>
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-blue-400 hover:bg-blue-400/10">
-                  LinkedIn
-                </Button>
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-blue-400 hover:bg-blue-400/10">
-                  Twitter
-                </Button>
-              </div>
-            </div>
-          </div> */}
-        {/* </div>
-      </footer> */}
+      
     </div>
   );
 };
