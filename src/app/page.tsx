@@ -10,6 +10,18 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+
+
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -37,6 +49,9 @@ import {
   Calendar,
   FileText
 } from 'lucide-react';
+import Hero from "@/components/Hero";
+import PlatformExpert from "@/components/PlatformExpert";
+import { Timeline } from "@/components/Timeline";
 
 // Types for better TypeScript support
 interface StoryStepProps {
@@ -59,6 +74,7 @@ interface ServiceCardProps {
 
 const SazaeHomepage: React.FC = () => {
   const [currentStoryStep, setCurrentStoryStep] = useState(0);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -66,6 +82,8 @@ const SazaeHomepage: React.FC = () => {
     challenge: '',
     companySize: ''
   });
+
+
 
   // Story steps that guide the customer journey
   const storySteps = [
@@ -192,6 +210,8 @@ const SazaeHomepage: React.FC = () => {
     }
   ];
 
+
+
   // Auto-advance story steps
   useEffect(() => {
     const interval = setInterval(() => {
@@ -278,129 +298,21 @@ const SazaeHomepage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-blue-100 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-18">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
-              </div>
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                Sazae
-              </div>
-            </div>
-            <div className="hidden md:flex space-x-8">
-              <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Services</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
-              <a href="#insights" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Insights</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contact</a>
-            </div>
-            <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white border-0 shadow-lg">
-              <Phone className="mr-2 h-4 w-4" />
-              Free Consultation
-            </Button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-cyan-500/5 to-transparent"></div>
-        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <Badge className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 px-4 py-2">
-                  🌊 Your SaaS Transformation Partner
-                </Badge>
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                  Turn Your Business Systems Into Your
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
-                    {" "}Competitive Advantage
-                  </span>
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-                  We help Australian and Japanese businesses streamline operations, enhance efficiency, 
-                  and accelerate growth with proven SaaS solutions and cultural intelligence.
-                </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 text-lg px-8 py-4"
-                >
-                  <Lightbulb className="mr-2 h-5 w-5" />
-                  Start Your Digital Assessment
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-2 border-blue-200 hover:bg-blue-50 text-blue-700 text-lg px-8 py-4"
-                >
-                  <FileText className="mr-2 h-5 w-5" />
-                  View Our Success Stories
-                </Button>
-              </div>
-
-              {/* Real Trust Indicators */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
-                {[
-                  { number: "11th", label: "Year Boomi\nPartner", icon: <Award className="h-5 w-5" /> },
-                  { number: "3", label: "Countries\nServed", icon: <Globe className="h-5 w-5" /> },
-                  { number: "6+", label: "SaaS\nPlatforms", icon: <Database className="h-5 w-5" /> },
-                  { number: "2009", label: "Founded\nin Sydney", icon: <Building className="h-5 w-5" /> }
-                ].map((item, index) => (
-                  <div key={index} className="text-center">
-                    <div className="flex justify-center mb-2 text-blue-500">
-                      {item.icon}
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900">{item.number}</div>
-                    <div className="text-sm text-gray-600 whitespace-pre-line">{item.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Hero Visual - Turbo Cornutus (Sazae) Theme */}
-            <div className="relative">
-              <div className="relative z-10 bg-white rounded-3xl shadow-2xl p-8 border border-blue-100">
-                <div className="aspect-square bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
-                  <div className="relative z-10 text-center text-white">
-                    <div className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
-                      <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center">
-                        <div className="w-8 h-8 bg-white rounded-full opacity-90"></div>
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2">Sazae</h3>
-                    <p className="text-blue-100">Strong Defense • Good Fortune</p>
-                    <p className="text-sm text-blue-200 mt-2">Turbo Cornutus - Japanese Sea Snail</p>
-                  </div>
-                  <div className="absolute -top-10 -left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-300/20 rounded-full blur-3xl"></div>
-                </div>
-              </div>
-              <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-blue-200 to-cyan-200 rounded-3xl -z-10"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+    
+    {/* Import Hero */}
+    <Hero/>
+    <PlatformExpert/>
+    <Timeline/>
 
       {/* Our Expertise */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our SaaS Expertise Across Platforms
+            <h2 className="text-5xl md:text-4xl font-bold text-gray-900 mb-4">
+              SaaS Expertise Across Multiple Platforms
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Boutique team of IT consultants, business strategists, and technology architects specializing in leading SaaS platforms.
+              We're a Boutique team of expert IT consultants, business strategists, and technology architects specializing in leading SaaS platforms serving the APAC region.
             </p>
           </div>
 
@@ -598,7 +510,7 @@ const SazaeHomepage: React.FC = () => {
       </section>
 
       {/* Lead Capture Form */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 text-white relative overflow-hidden">
+      {/* <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute top-10 right-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-300/10 rounded-full blur-3xl"></div>
@@ -708,10 +620,10 @@ const SazaeHomepage: React.FC = () => {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      {/* <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-4 gap-8 mb-12">
             <div className="lg:col-span-2">
@@ -768,10 +680,10 @@ const SazaeHomepage: React.FC = () => {
                 <li className="hover:text-blue-400 transition-colors cursor-pointer">Japan-Australia Bridge</li>
               </ul>
             </div>
-          </div>
+          </div> */}
           
           {/* Bottom Footer */}
-          <div className="border-t border-gray-800 pt-8">
+          {/* <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-gray-400 text-sm">
                 &copy; 2025 Sazae Pty Ltd. All rights reserved.
@@ -789,9 +701,9 @@ const SazaeHomepage: React.FC = () => {
                 </Button>
               </div>
             </div>
-          </div>
-        </div>
-      </footer>
+          </div> */}
+        {/* </div>
+      </footer> */}
     </div>
   );
 };
