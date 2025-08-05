@@ -11,24 +11,22 @@ import Image from "next/image";
 import japanFlag from "../../public/logos/japan.png"
 import australiaFlag from "../../public/logos/australia.png"
 import vietnamFlag from "../../public/logos/vietnam.png"
-import mendixLogo from "../../public/logos/mendix.jpg"
-import acquiaLogo from "../../public/logos/acquia.png"
-import drupalLogo from "../../public/logos/drupal.png"
-import hubspotLogo from "../../public/logos/hubspot.png"
-import odooLogo from "../../public/logos/odoo.png"
-import servicenowLogo from "../../public/logos/servicenow.png"
-import boomiLogo from "../../public/logos/boomi.png"
-
+import mendixLogo from "../../public/logos/mendix.png.png"
+import acquiaLogo from "../../public/logos/acquia.png.png"
+import drupalLogo from "../../public/logos/drupal.png.png"
+import hubspotLogo from "../../public/logos/hubspot.png.png"
+import odooLogo from "../../public/logos/odoo.png.png"
+import servicenowLogo from "../../public/logos/servicenow.png.png"
+import boomiLogo from "../../public/logos/boomi.png.png"
 
 const PlatformExpert: React.FC = () => {
   const [hoveredPlatform, setHoveredPlatform] = useState<string | null>(null);
-
 
   const platforms = [
     {
       id: 'odoo',
       name: 'Odoo ERP',
-      tagline: 'Scale Your Japanese Business Globally',
+      tagline: 'Scale Your Business Globally',
       description: 'Complete ERP management across Japan, Australia & Vietnam operations',
       logo: odooLogo,
       logoAlt: 'Odoo Logo',
@@ -152,8 +150,8 @@ const PlatformExpert: React.FC = () => {
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-blue-100">
             <div className="flex items-center justify-center space-x-8">
                <div className="text-center flex flex-col items-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3">
-                   <Image src={japanFlag} width={50} height={50} alt="japan flag"></Image>
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm">
+                   <Image src={japanFlag} width={40} height={40} alt="japan flag" className="rounded-sm" />
                 </div>
                 <div className="font-semibold text-gray-800">Japan</div>
                 <div className="text-sm text-gray-600">Home Base</div>
@@ -162,8 +160,8 @@ const PlatformExpert: React.FC = () => {
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
                <div className="text-center flex flex-col items-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3">
-                       <Image src={australiaFlag} width={50} height={50} alt="australian flag"></Image>
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm">
+                       <Image src={australiaFlag} width={40} height={40} alt="australian flag" className="rounded-sm" />
                 </div>
                 <div className="font-semibold text-gray-800">Australia</div>
                 <div className="text-sm text-gray-600">Expansion Hub</div>
@@ -172,8 +170,8 @@ const PlatformExpert: React.FC = () => {
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
               <div className="text-center flex flex-col items-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3">
-                      <Image src={vietnamFlag} width={50} height={50} alt="vietname flag"></Image>
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm">
+                      <Image src={vietnamFlag} width={40} height={40} alt="vietnam flag" className="rounded-sm" />
                 </div>
                 <div className="font-semibold text-gray-800">Vietnam</div>
                 <div className="text-sm text-gray-600">Operations Center</div>
@@ -187,14 +185,14 @@ const PlatformExpert: React.FC = () => {
           {platforms.map((platform) => (
             <Card 
               key={platform.id}
-              className="group hover:shadow-2xl transition-all duration-500  relative  overflow-hidden cursor-pointer bg-white p-0 pb-10"
+              className="group hover:shadow-2xl transition-all duration-500 relative overflow-hidden cursor-pointer bg-white p-0 pb-10"
               onMouseEnter={() => setHoveredPlatform(platform.id)}
               onMouseLeave={() => setHoveredPlatform(null)}
             >
               {/* Platform Header with Logo */}
               <div className={`h-32 bg-gradient-to-br ${platform.gradient} relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/10"></div>
-                <div className="relative z-10 flex items-center justify-between p-6 h-full inset-0">
+                <div className="relative z-10 flex items-center justify-between p-6 h-full">
                   <div className="flex-1">
                     {platform.badge && (
                       <Badge className="mb-2 bg-white/20 text-white border-white/30 text-xs">
@@ -205,15 +203,15 @@ const PlatformExpert: React.FC = () => {
                     <div className="text-white/90 text-sm font-medium mt-1">{platform.tagline}</div>
                   </div>
                   <div className="flex-shrink-0">
-                    {/* Company Logo */}
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center p-2">
-                     <Image
-                      src={platform.logo}
-                      alt={platform.logoAlt}
-                      width={48}  
-                      height={48}  
-                      className="max-w-full max-h-full object-contain filter brightness-0 invert bg-transparent"
-/>
+                    {/* Company Logo - FIXED VERSION */}
+                    <div className="w-16 h-16 bg-white/97 rounded-lg flex items-center justify-center p-2 shadow-lg">
+                      <Image
+                        src={platform.logo}
+                        alt={platform.logoAlt}
+                        width={48}  
+                        height={48}  
+                        className="max-w-full max-h-full object-contain"
+                      />
                     </div>
                   </div>
                 </div>
@@ -236,7 +234,6 @@ const PlatformExpert: React.FC = () => {
                       <span className="text-sm text-gray-700">{feature}</span>
                     </div>
                   ))}
-                  
                 </div>
 
                 {/* Market Coverage */}
@@ -262,18 +259,9 @@ const PlatformExpert: React.FC = () => {
             </Card>
           ))}
         </div>
-
-       
-
-      
       </div>
     </section>
   );
 };
-
-
-
-
-
 
 export default PlatformExpert;

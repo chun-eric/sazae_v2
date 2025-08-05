@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import { Timeline as TimeLineComponent } from "./ui/timelines";
+import Image from "next/image";
 
 export function TimelineSelection() {
   const data = [
@@ -11,7 +12,7 @@ export function TimelineSelection() {
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-lg dark:text-neutral-200">
 With over 10 years of experience, we're expert IT consultants specializing in Odoo, ServiceNow, Boomi, Mendix, HubSpot, Drupal, and Acquia. We assess your digital systems, find growth opportunities, and deliver custom solutions that streamline operations and accelerate your business.          </p>
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="https://assets.aceternity.com/templates/startup-1.webp"
               alt="startup template"
               width={500}
@@ -56,7 +57,7 @@ Sazae means "Turbo Cornutus" – a Japanese sea snail with a distinctive five-sp
             not. Here are some more example of beautiful designs I built.
           </p> */}
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="https://assets.aceternity.com/pro/hero-sections.png"
               alt="hero template"
               width={500}
@@ -113,7 +114,7 @@ Sazae means "Turbo Cornutus" – a Japanese sea snail with a distinctive five-sp
             </div>
           </div> */}
           <div className="grid grid-cols-2 gap-4">
-            <img
+            <Image
               src="https://assets.aceternity.com/pro/hero-sections.png"
               alt="hero template"
               width={500}
