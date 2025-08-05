@@ -1,25 +1,25 @@
 "use client"
 
-import Image from "next/image";
+// import Image from "next/image";
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
+// import { Input } from '@/components/ui/input';
+// import { Label } from '@/components/ui/label';
+// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+// import { Textarea } from '@/components/ui/textarea';
+// import {
+//   NavigationMenu,
+//   NavigationMenuContent,
+//   NavigationMenuIndicator,
+//   NavigationMenuItem,
+//   NavigationMenuLink,
+//   NavigationMenuList,
+//   NavigationMenuTrigger,
+//   NavigationMenuViewport,
+// } from "@/components/ui/navigation-menu";
 
 
 import { 
@@ -29,29 +29,29 @@ import {
   Users, 
   Globe, 
   Zap, 
-  Shield,
+  // Shield,
   Target,
-  Lightbulb,
-  BarChart3,
-  Clock,
+  // Lightbulb,
+  // BarChart3,
+  // Clock,
   Award,
-  ChevronDown,
-  Play,
-  Star,
-  Phone,
-  Mail,
-  MapPin,
+  // ChevronDown,
+  // Play,
+  // Star,
+  // Phone,
+  // Mail,
+  // MapPin,
   Settings,
   Database,
   Cpu,
   Network,
-  Building,
-  Calendar,
-  FileText
+  // Building,
+  // Calendar,
+  // FileText
 } from 'lucide-react';
 import Hero from "@/components/Hero";
 import PlatformExpert from "@/components/PlatformExpert";
-import { Timeline, TimelineSelection } from "@/components/TimelineSelection";
+import {  TimelineSelection } from "@/components/TimelineSelection";
 import GetinContact from "@/components/GetinContact";
 import { MarqueeDemo } from "@/components/Clients";
 
@@ -452,26 +452,34 @@ const SazaeHomepage: React.FC = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {
-                title: "Boomi Recognized as Leader in 2025 Gartner Magic Quadrant for iPaaS",
-                excerpt: "11th consecutive year of recognition highlights Boomi's continued innovation in integration platforms.",
-                date: "Recent",
-                category: "Partnership News"
-              },
-              {
-                title: "Odoo AI Features: Business Support Without Complexity",
-                excerpt: "How Odoo's AI tools seamlessly integrate into business workflows for smarter operations.",
-                date: "Recent",
-                category: "Technology Insights"
-              },
-              {
-                title: "Digital Marketing Seminar: Melbourne March 2025",
-                excerpt: "Co-organized with Ashurst Australia and Melbourne Japanese Chamber of Commerce.",
-                date: "Upcoming",
-                category: "Events"
-              }
-            ].map((article, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+  {
+    title: "Boomi Recognized as Leader in 2025 Gartner Magic Quadrant for iPaaS",
+    img: "/blogimages/blogimage_1.png", // Correct path
+    excerpt: "11th consecutive year of recognition highlights Boomi's continued innovation in integration platforms.",
+    date: "Recent",
+    category: "Partnership News"
+  },
+  {
+    title: "Odoo AI Features: Business Support Without Complexity",
+    img: "/blogimages/blogimage_2.png", // Correct path
+    excerpt: "How Odoo's AI tools seamlessly integrate into business workflows for smarter operations.",
+    date: "Recent",
+    category: "Technology Insights"
+  },
+  {
+    title: "Digital Marketing Seminar: Melbourne March 2025",
+    img: "/blogimages/blogimage_3.png", // Correct path
+    excerpt: "Co-organized with Ashurst Australia and Melbourne Japanese Chamber of Commerce.",
+    date: "Upcoming",
+    category: "Events"
+  }
+].map((article, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg overflow-hidden pt-0">
+                <img
+            src={article.img}
+            alt={`Featured image for ${article.title}`}
+            className="w-full aspect-video object-cover border-md"
+          />
                 <CardHeader>
                   <Badge className="w-fit mb-2 bg-blue-100 text-blue-800">
                     {article.category}

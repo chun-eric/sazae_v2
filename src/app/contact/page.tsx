@@ -13,12 +13,12 @@ import {
   Mail, 
   MapPin, 
   Clock, 
-  Building, 
-  Globe,
+  // Building, 
+  // Globe,
   Send,
-  MessageSquare,
+  // MessageSquare,
   Calendar,
-  Users,
+  // Users,
   ArrowRight,
   CheckCircle
 } from 'lucide-react';
@@ -42,7 +42,7 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20 mt-20">
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-cyan-500/5 to-transparent"></div>
@@ -84,7 +84,7 @@ const ContactPage: React.FC = () => {
                 icon: <Mail className="h-8 w-8 text-cyan-500" />,
                 title: "Email Us", 
                 description: "Send us your detailed requirements",
-                contact: "hello@sazae.com.au",
+                contact: "support@sazae.com.au",
                 action: "Send Email",
                 gradient: "from-cyan-500 to-cyan-600"
               },
@@ -97,7 +97,7 @@ const ContactPage: React.FC = () => {
                 gradient: "from-purple-500 to-purple-600"
               }
             ].map((option, index) => (
-              <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+              <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 border shadow-lg">
                 <CardHeader className="pb-4">
                   <div className="mx-auto mb-4 p-4 bg-gray-50 rounded-full w-fit">
                     {option.icon}
@@ -123,17 +123,17 @@ const ContactPage: React.FC = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Tell Us About Your Project
+              Let's Bring Your Project to Life
             </h2>
-            <p className="text-xl text-gray-600">
-              Fill out the form below and we'll get back to you within 24 hours with a tailored solution.
-            </p>
+            <p className="text-lg text-gray-600">
+              Share your goals below, and our experts will craft a strategic proposal to get you there. <br/> Expect a custom plan in your inbox within 24 hours.
+              </p>
           </div>
 
-          <Card className="bg-white/95 backdrop-blur-sm border-0 shadow-2xl max-w-5xl">
-            <CardHeader className="text-center pb-6">
-              <CardTitle className="text-2xl text-gray-800 mb-2">
-                Project Inquiry Form
+          <Card className="bg-white/95 backdrop-blur-sm border shadow-lg max-w-5xl">
+            <CardHeader className="text-center pb-2">
+              <CardTitle className="text-2xl text-gray-800 mb-2 mt-3">
+                Inquiry Form
               </CardTitle>
               <CardDescription className="text-lg text-gray-600">
                 The more details you provide, the better we can help you
@@ -249,7 +249,7 @@ const ContactPage: React.FC = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     placeholder="Tell us about your project, current challenges, goals, timeline, and any specific requirements..."
-                    rows={6}
+                    rows={14}
                     className="border-2 border-gray-200 focus:border-blue-500 transition-colors resize-none"
                   />
                 </div>
@@ -346,7 +346,7 @@ const ContactPage: React.FC = () => {
                 isHQ: false
               }
             ].map((office, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <Card key={index} className="border shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader className="text-center">
                   <div className="flex items-center justify-center space-x-2 mb-2">
                     <span className="text-3xl">{office.flag}</span>

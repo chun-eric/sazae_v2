@@ -5,7 +5,12 @@ import {
   Phone,
   Mail
 } from 'lucide-react';
-import Image from "next/image";
+
+
+import Link from 'next/link';
+import Image from 'next/image';
+import headerLogo from "../../public/header_logo.png"
+import { Comfortaa } from 'next/font/google';
 
 
 const Footer: React.FC = () => {
@@ -16,7 +21,17 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
    
-          <Image src="/sazae_logo.png" alt="Company Logo" width={100} height={100} />
+          <div className="flex items-center space-x-2 flex-shrink-0">
+         
+              <Link href="/">
+                <Image src={headerLogo} width={80} height={80} alt="logo"></Image>
+              </Link>
+            <Link href="/">
+            <div className="text-lg sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent leading-tightest capitalize ml-[-5px] " style={{ fontFamily: "comfortaa"}}>
+              Sazae
+            </div>
+             </Link>
+          </div>
     
            
             </div>

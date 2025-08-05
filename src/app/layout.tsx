@@ -4,28 +4,19 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import "./globals.css";
 
-
-
 export const inter = Inter({ subsets: ['latin'] })
+
 export const raleway = Raleway({
-  subsets: ['latin'], // Or other subsets as needed
-  weight: ['400', '700'], // Specify desired weights
-  variable: '--font-raleway', // Optional: for use with CSS variables in Tailwind
-});
-const comfortaa = Comfortaa({
   subsets: ['latin'],
-  weight: ['400', '700'] // Specify the weights you need
+  weight: ['400', '700'],
+  variable: '--font-raleway',
 });
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+export const comfortaa = Comfortaa({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-comfortaa', // Add CSS variable
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -39,9 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-<body className={`${inter.className} ${raleway.variable} ${comfortaa.variable}`}>
-          <Header />
-          <main className="min-h-screen">
+      <body className={`${inter.className} ${raleway.variable} ${comfortaa.variable}`}>
+        <Header />
+        <main className="min-h-screen">
           {children}
         </main>
         <Footer />
