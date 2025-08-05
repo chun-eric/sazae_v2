@@ -11,6 +11,14 @@ import Image from "next/image";
 import japanFlag from "../../public/logos/japan.png"
 import australiaFlag from "../../public/logos/australia.png"
 import vietnamFlag from "../../public/logos/vietnam.png"
+import mendixLogo from "../../public/logos/mendix.jpg"
+import acquiaLogo from "../../public/logos/acquia.png"
+import drupalLogo from "../../public/logos/drupal.png"
+import hubspotLogo from "../../public/logos/hubspot.png"
+import odooLogo from "../../public/logos/odoo.png"
+import servicenowLogo from "../../public/logos/servicenow.png"
+import boomiLogo from "../../public/logos/boomi.png"
+
 
 const PlatformExpert: React.FC = () => {
   const [hoveredPlatform, setHoveredPlatform] = useState<string | null>(null);
@@ -22,7 +30,7 @@ const PlatformExpert: React.FC = () => {
       name: 'Odoo ERP',
       tagline: 'Scale Your Japanese Business Globally',
       description: 'Complete ERP management across Japan, Australia & Vietnam operations',
-      logo: '/logos/odoo.png',
+      logo: odooLogo,
       logoAlt: 'Odoo Logo',
       gradient: 'from-purple-500 to-purple-700',
       features: [
@@ -38,7 +46,7 @@ const PlatformExpert: React.FC = () => {
       name: 'HubSpot CRM',
       tagline: 'Japanese Sales Excellence',
       description: 'CRM that respects Japanese business practices & enabling international growth',
-      logo: '/logos/hubspot.png',
+      logo: hubspotLogo,
       logoAlt: 'HubSpot Logo',
       gradient: 'from-orange-500 to-red-600',
       features: [
@@ -54,7 +62,7 @@ const PlatformExpert: React.FC = () => {
       name: 'Boomi Integration',
       tagline: 'Connect Markets Seamlessly',
       description: '11-year partnership delivering bulletproof connections across regions',
-      logo: 'https://boomi.com/wp-content/uploads/boomi-logo-white.svg',
+      logo: boomiLogo,
       logoAlt: 'Boomi Logo',
       gradient: 'from-blue-500 to-blue-700',
       features: [
@@ -71,7 +79,7 @@ const PlatformExpert: React.FC = () => {
       name: 'ServiceNow',
       tagline: 'Enterprise Operations',
       description: 'Workflow automation that maintains your quality standards globally',
-      logo: '/logos/servicenow.png',
+      logo: servicenowLogo,
       logoAlt: 'ServiceNow Logo',
       gradient: 'from-gray-700 to-gray-900',
       features: [
@@ -87,7 +95,7 @@ const PlatformExpert: React.FC = () => {
       name: 'Acquia Drupal',
       tagline: 'International Digital Presence',
       description: 'Drupal expertise for consistent brand experience internationally',
-      logo: '/logos/acquia.png',
+      logo: acquiaLogo,
       logoAlt: 'Acquia Logo',
       gradient: 'from-blue-400 to-cyan-600',
       features: [
@@ -103,7 +111,7 @@ const PlatformExpert: React.FC = () => {
       name: 'Mendix Low-Code',
       tagline: 'Custom Solutions for Japanese Business',
       description: 'Low-code development that understands your unique requirements',
-      logo: '/logos/mendix.jpg',
+      logo: mendixLogo,
       logoAlt: 'Mendix Logo',
       gradient: 'from-cyan-500 to-blue-600',
       features: [
@@ -179,14 +187,14 @@ const PlatformExpert: React.FC = () => {
           {platforms.map((platform) => (
             <Card 
               key={platform.id}
-              className="group hover:shadow-2xl transition-all duration-500  border-0 overflow-hidden cursor-pointer"
+              className="group hover:shadow-2xl transition-all duration-500  relative  overflow-hidden cursor-pointer bg-white p-0 pb-10"
               onMouseEnter={() => setHoveredPlatform(platform.id)}
               onMouseLeave={() => setHoveredPlatform(null)}
             >
               {/* Platform Header with Logo */}
               <div className={`h-32 bg-gradient-to-br ${platform.gradient} relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/10"></div>
-                <div className="relative z-10 flex items-center justify-between p-6 h-full">
+                <div className="relative z-10 flex items-center justify-between p-6 h-full inset-0">
                   <div className="flex-1">
                     {platform.badge && (
                       <Badge className="mb-2 bg-white/20 text-white border-white/30 text-xs">
@@ -202,8 +210,8 @@ const PlatformExpert: React.FC = () => {
                      <Image
                       src={platform.logo}
                       alt={platform.logoAlt}
-                      width={64}
-                      height={64}
+                      width={48}  
+                      height={48}  
                       className="max-w-full max-h-full object-contain filter brightness-0 invert bg-transparent"
 />
                     </div>
@@ -232,7 +240,7 @@ const PlatformExpert: React.FC = () => {
                 </div>
 
                 {/* Market Coverage */}
-                <div className="border-t pt-4 mb-4">
+                <div className="border-t pt-4 mb-6">
                   <div className="text-sm font-semibold text-gray-800 mb-2">Market Coverage:</div>
                   <div className="flex flex-wrap gap-2">
                     {platform.markets.map((market, index) => (
@@ -261,7 +269,7 @@ const PlatformExpert: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-8 opacity-60 hover:opacity-100 transition-opacity">
             {platforms.map((platform) => (
               <div key={`logo-${platform.id}`} className="flex items-center justify-center h-12 w-32">
-                <img 
+                <Image 
                   src={platform.logo} 
                   alt={platform.logoAlt}
                   className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
