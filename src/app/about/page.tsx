@@ -66,11 +66,11 @@ const AboutUsPage = () => {
 
           {/* Leadership Team */}
           <div className="mb-20 pt-30">
-            <h3 className="text-2xl font-bold text-center text-gray-900 mb-12">Leadership Team</h3>
+            <h3 className="text-2xl font-bold text-center text-gray-900 mb-12">The Leadership Team</h3>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               
               {/* CEO Card */}
-              <div className="bg-white rounded-2xl shadow-md p-8 border border-gray-100">
+              <div className="bg-white rounded-2xl shadow-md p-8  pb-12 border border-gray-100">
                 <div className="flex items-start space-x-6">
                   <div className="w-30 h-30 rounded-xl flex items-center justify-center text-white font-bold text-2xl">
                     <Image src={ceo} width={100} height={100} alt="ceo ayumi mizoshiri" className='rounded'></Image>
