@@ -31,6 +31,11 @@ import {
   // Calendar,
   // FileText
 } from 'lucide-react';
+import Image from 'next/image';
+import blogimage1 from "../../public/blogImages/blogimage_1.png"
+import blogimage2 from "../../public/blogImages/blogimage_2.png"
+import blogimage3 from "../../public/blogImages/blogimage_3.png"
+
 
 const News = () => {
   return  (
@@ -46,69 +51,69 @@ const News = () => {
             {[
   {
     title: "Boomi Recognized as Leader in 2025 Gartner Magic Quadrant for iPaaS",
-    img: "/blogimages/blogimage_1.png", // Correct path
+    img: blogimage1, // Correct path
     excerpt: "11th consecutive year of recognition highlights Boomi's continued innovation in integration platforms.",
     date: "Recent",
     category: "Partnership News"
   },
   {
     title: "Odoo AI Features: Business Support Without Complexity",
-    img: "/blogimages/blogimage_2.png", // Correct path
+    img: blogimage2, // Correct path
     excerpt: "How Odoo's AI tools seamlessly integrate into business workflows for smarter operations.",
     date: "Recent",
     category: "Technology Insights"
   },
   {
     title: "Digital Marketing Seminar: Melbourne March 2025",
-    img: "/blogimages/blogimage_3.png", // Correct path
+    img: blogimage3, // Correct path
     excerpt: "Co-organized with Ashurst Australia and Melbourne Japanese Chamber of Commerce.",
     date: "Upcoming",
     category: "Events"
   },
   {
     title: "Digital Marketing Seminar: Melbourne March 2025",
-    img: "/blogimages/blogimage_3.png", // Correct path
+    img: blogimage1, // Correct path
     excerpt: "Co-organized with Ashurst Australia and Melbourne Japanese Chamber of Commerce.",
     date: "Upcoming",
     category: "Events"
   },
   {
     title: "Digital Marketing Seminar: Melbourne March 2025",
-    img: "/blogimages/blogimage_3.png", // Correct path
+    img: blogimage2, // Correct path
     excerpt: "Co-organized with Ashurst Australia and Melbourne Japanese Chamber of Commerce.",
     date: "Upcoming",
     category: "Events"
   },
   {
     title: "Digital Marketing Seminar: Melbourne March 2025",
-    img: "/blogimages/blogimage_3.png", // Correct path
+    img: blogimage3, // Correct path
     excerpt: "Co-organized with Ashurst Australia and Melbourne Japanese Chamber of Commerce.",
     date: "Upcoming",
     category: "Events"
   },
   {
     title: "Digital Marketing Seminar: Melbourne March 2025",
-    img: "/blogimages/blogimage_3.png", // Correct path
+    img: blogimage1, // Correct path
     excerpt: "Co-organized with Ashurst Australia and Melbourne Japanese Chamber of Commerce.",
     date: "Upcoming",
     category: "Events"
   }, {
     title: "Digital Marketing Seminar: Melbourne March 2025",
-    img: "/blogimages/blogimage_3.png", // Correct path
+    img: blogimage2, // Correct path
     excerpt: "Co-organized with Ashurst Australia and Melbourne Japanese Chamber of Commerce.",
     date: "Upcoming",
     category: "Events"
   },
    {
     title: "Digital Marketing Seminar: Melbourne March 2025",
-    img: "/blogimages/blogimage_3.png", // Correct path
+    img: blogimage3, // Correct path
     excerpt: "Co-organized with Ashurst Australia and Melbourne Japanese Chamber of Commerce.",
     date: "Upcoming",
     category: "Events"
   }
 ].map((article, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg overflow-hidden pt-0">
-                <img
+                <Image
             src={article.img}
             alt={`Featured image for ${article.title}`}
             className="w-full aspect-video object-cover border-md"
