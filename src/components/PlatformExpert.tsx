@@ -263,21 +263,7 @@ const PlatformExpert: React.FC = () => {
           ))}
         </div>
 
-        {/* Platform Logos Strip - Alternative Display */}
-        <div className="mt-16 text-center">
-          <h3 className="text-lg font-semibold text-gray-800 mb-8">Trusted Partners & Platforms</h3>
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-60 hover:opacity-100 transition-opacity">
-            {platforms.map((platform) => (
-              <div key={`logo-${platform.id}`} className="flex items-center justify-center h-12 w-32">
-                <Image 
-                  src={platform.logo} 
-                  alt={platform.logoAlt}
-                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+       
 
       
       </div>

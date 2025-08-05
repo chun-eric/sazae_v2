@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from '@/components/ui/button';
 import { Lightbulb, FileText, Award, Globe, Database, Building } from 'lucide-react';
-import { GlobeDemo } from "./BigGlobe";
+// import { GlobeDemo } from "./BigGlobe";
 
 const Hero = () => {
   return (
@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* Text Content */}
           <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
             <div className="space-y-4 lg:space-y-6">
@@ -23,21 +23,22 @@ const Hero = () => {
                 </span>
               </h1>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                We help Japanese companies streamline operations and accelerate growth across Japan, Australia, and Vietnam with proven SaaS solutions and deep cultural understanding.
+                Sazae helps Japanese companies streamline operations and accelerate growth across Japan, Australia, and Vietnam with proven IT SaaS solutions and deep cultural understanding.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Button 
-  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white border-0 shadow-xl hover:shadow-2xl transition-all duration-300 text-base sm:text-lg px-4 py-6 sm:px-6 sm:py-4 lg:px-12 lg:py-6 lg:pr-5"
->
-  <Lightbulb className="mr-1 h-4 w-4 sm:h-5 sm:w-5" />
-  Talk to an Expert
-</Button>
+
+             {/* The button */}
+            <div 
+            className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold border-0 shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-4 flex items-center justify-center rounded-md gap-2.5 max-w-[50%] cursor-pointer"
+          >
+              <Lightbulb className="h-5 w-5" />
+              <span className="text-xl">Talk to an Expert</span>
             </div>
+          
 
             {/* Real Trust Indicators */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 pt-6 lg:pt-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-3 pt-6 lg:pt-8 max-w-[80%]">
               {[
                 { number: "11th", label: "Year Boomi\nPartner", icon: <Award className="h-4 w-4 sm:h-5 sm:w-5" /> },
                 { number: "3", label: "Countries\nServed", icon: <Globe className="h-4 w-4 sm:h-5 sm:w-5" /> },

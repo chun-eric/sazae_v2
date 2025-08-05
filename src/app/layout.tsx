@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Raleway } from "next/font/google";
+import { Inter, Raleway, Comfortaa } from "next/font/google";
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import "./globals.css";
@@ -11,6 +11,10 @@ export const raleway = Raleway({
   subsets: ['latin'], // Or other subsets as needed
   weight: ['400', '700'], // Specify desired weights
   variable: '--font-raleway', // Optional: for use with CSS variables in Tailwind
+});
+const comfortaa = Comfortaa({
+  subsets: ['latin'],
+  weight: ['400', '700'] // Specify the weights you need
 });
 
 // const geistSans = Geist({
@@ -35,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-<body className={`${inter.className} ${raleway.variable}`}>
+<body className={`${inter.className} ${raleway.variable} ${comfortaa.variable}`}>
           <Header />
           <main className="min-h-screen">
           {children}

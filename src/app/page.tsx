@@ -53,6 +53,7 @@ import Hero from "@/components/Hero";
 import PlatformExpert from "@/components/PlatformExpert";
 import { Timeline, TimelineSelection } from "@/components/TimelineSelection";
 import GetinContact from "@/components/GetinContact";
+import { MarqueeDemo } from "@/components/Clients";
 
 // Types for better TypeScript support
 interface StoryStepProps {
@@ -303,6 +304,7 @@ const SazaeHomepage: React.FC = () => {
     {/* Import Hero */}
     <Hero/>
     <PlatformExpert/>
+    <MarqueeDemo/>
     <TimelineSelection/>
 
       {/* Our Expertise */}
@@ -366,7 +368,7 @@ const SazaeHomepage: React.FC = () => {
       </section> */}
 
       {/* Transformation Journey */}
-      <section id="story" className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+      {/* <section id="story" className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -401,8 +403,7 @@ const SazaeHomepage: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
-
+      </section> */}
 
 
       {/* Geographic Presence */}
