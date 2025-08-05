@@ -72,7 +72,7 @@ const Hero = () => {
                     console.error('Video failed to load:', e);
                     // Hide video and show fallback
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                 
                   }}
                 >
                   <source src="/videos/sazae_video.mp4" type="video/mp4" />
