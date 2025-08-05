@@ -45,7 +45,7 @@ import { GlobeDemo } from "./BigGlobe";
                   { number: "11th", label: "Year Boomi\nPartner", icon: <Award className="h-5 w-5" /> },
                   { number: "3", label: "Countries\nServed", icon: <Globe className="h-5 w-5" /> },
                   { number: "6+", label: "SaaS\nPlatforms", icon: <Database className="h-5 w-5" /> },
-                  { number: "2009", label: "Founded\nin Sydney", icon: <Building className="h-5 w-5" /> }
+                  { number: "2015", label: "Founded\nin Sydney", icon: <Building className="h-5 w-5" /> }
                 ].map((item, index) => (
                   <div key={index} className="text-center">
                     <div className="flex justify-center mb-2 text-blue-500">

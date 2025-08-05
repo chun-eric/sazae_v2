@@ -52,6 +52,7 @@ import {
 import Hero from "@/components/Hero";
 import PlatformExpert from "@/components/PlatformExpert";
 import { Timeline, TimelineSelection } from "@/components/TimelineSelection";
+import GetinContact from "@/components/GetinContact";
 
 // Types for better TypeScript support
 interface StoryStepProps {
@@ -492,7 +493,7 @@ const SazaeHomepage: React.FC = () => {
       </section>
 
      
-
+     <GetinContact/>
       
     </div>
   );

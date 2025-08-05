@@ -37,7 +37,7 @@ const PlatformExpert: React.FC = () => {
       id: 'hubspot',
       name: 'HubSpot CRM',
       tagline: 'Japanese Sales Excellence',
-      description: 'CRM that respects Japanese business practices while enabling international growth',
+      description: 'CRM that respects Japanese business practices & enabling international growth',
       logo: '/logos/hubspot.png',
       logoAlt: 'HubSpot Logo',
       gradient: 'from-orange-500 to-red-600',
@@ -117,7 +117,7 @@ const PlatformExpert: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20">
+    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20 lg:pt-30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
@@ -271,34 +271,7 @@ const PlatformExpert: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom CTA Section */}
-        <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-blue-100 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Scale Your Japanese Business Globally?
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Let's discuss how our platform expertise can help you achieve seamless operations 
-              across Japan, Australia, and Vietnam.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white"
-              >
-                Schedule Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-blue-200 hover:bg-blue-50 text-blue-700"
-              >
-                Download Platform Guide
-              </Button>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </section>
   );

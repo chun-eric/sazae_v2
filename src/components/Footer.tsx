@@ -15,9 +15,9 @@ const Footer: React.FC = () => {
         <div className="grid lg:grid-cols-4 gap-8 mb-12">
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-         <div className="w-12 h-12 rounded-xl flex items-center justify-center">
-          <Image src="/sazae_logo.png" alt="Company Logo" width={250} height={250} />
-        </div>
+   
+          <Image src="/sazae_logo.png" alt="Company Logo" width={100} height={100} />
+    
            
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed text-sm pr-3">
