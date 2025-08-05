@@ -8,6 +8,9 @@ import {
   CheckCircle
 } from 'lucide-react';
 import Image from "next/image";
+import japanFlag from "../../public/logos/japan.png"
+import australiaFlag from "../../public/logos/australia.png"
+import vietnamFlag from "../../public/logos/vietnam.png"
 
 const PlatformExpert: React.FC = () => {
   const [hoveredPlatform, setHoveredPlatform] = useState<string | null>(null);
@@ -128,7 +131,7 @@ const PlatformExpert: React.FC = () => {
               Three Strategic Markets
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We're the specialized consulting firm that Japanese businesses rely on for SaaS implementations 
             that work seamlessly across Japan, Australia, and Vietnam. Our deep understanding of Japanese 
             business culture combined with multi-market technical expertise ensures your technology 
@@ -141,8 +144,8 @@ const PlatformExpert: React.FC = () => {
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-blue-100">
             <div className="flex items-center justify-center space-x-8">
                <div className="text-center flex flex-col items-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mb-3">
-                  <span className="text-2xl">🇯🇵</span>
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3">
+                   <Image src={japanFlag} width={50} height={50} alt="japan flag"></Image>
                 </div>
                 <div className="font-semibold text-gray-800">Japan</div>
                 <div className="text-sm text-gray-600">Home Base</div>
@@ -151,8 +154,8 @@ const PlatformExpert: React.FC = () => {
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
                <div className="text-center flex flex-col items-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mb-3">
-                  <span className="text-2xl">🇦🇺</span>
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3">
+                       <Image src={australiaFlag} width={50} height={50} alt="australian flag"></Image>
                 </div>
                 <div className="font-semibold text-gray-800">Australia</div>
                 <div className="text-sm text-gray-600">Expansion Hub</div>
@@ -161,8 +164,8 @@ const PlatformExpert: React.FC = () => {
                 <ArrowRight className="h-6 w-6 text-gray-400" />
               </div>
               <div className="text-center flex flex-col items-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-yellow-500 rounded-full flex items-center justify-center mb-3">
-                  <span className="text-2xl">🇻🇳</span>
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3">
+                      <Image src={vietnamFlag} width={50} height={50} alt="vietname flag"></Image>
                 </div>
                 <div className="font-semibold text-gray-800">Vietnam</div>
                 <div className="text-sm text-gray-600">Operations Center</div>

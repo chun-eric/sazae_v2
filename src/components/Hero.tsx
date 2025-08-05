@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from '@/components/ui/button';
 import { Lightbulb, FileText, Award, Globe, Database, Building } from 'lucide-react';
+import { GlobeDemo } from "./BigGlobe";
 
  const Hero = () => {
   return  (
@@ -59,6 +60,7 @@ import { Lightbulb, FileText, Award, Globe, Database, Building } from 'lucide-re
 
             {/* Hero Visual - Turbo Cornutus (Sazae) Theme */}
             <div className="relative">
+              {/* <GlobeDemo/> */}
               <div className="relative z-10 bg-white rounded-3xl shadow-2xl p-8 border border-blue-100">
                 <div className="aspect-square bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center relative overflow-hidden">
                   <div className="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
