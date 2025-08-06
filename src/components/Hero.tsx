@@ -29,31 +29,31 @@ const Hero = () => {
             
 
              {/* The button */}
-            <div 
-            className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold border-0 shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-4 flex items-center justify-center rounded-md gap-2.5 max-w-[50%] cursor-pointer"
-          >
-              <Lightbulb className="h-5 w-5" />
-              <span className="text-xl">Talk to an Expert</span>
-            </div>
+         <div 
+  className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold border-0 shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-4 flex items-center justify-center rounded-md gap-2.5 md:max-w-[60%] cursor-pointer mx-auto lg:mx-0 lg:ml-0 max-w-[60%]"
+>
+  <Lightbulb className="h-5 w-5" />
+  <span className="text-xl">Talk to an Expert</span>
+</div>
           
 
             {/* Real Trust Indicators */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-3 pt-6 lg:pt-8 max-w-[80%]">
-              {[
-                { number: "11th", label: "Year Boomi\nPartner", icon: <Award className="h-4 w-4 sm:h-5 sm:w-5" /> },
-                { number: "3", label: "Countries\nServed", icon: <Globe className="h-4 w-4 sm:h-5 sm:w-5" /> },
-                { number: "6+", label: "SaaS\nPlatforms", icon: <Database className="h-4 w-4 sm:h-5 sm:w-5" /> },
-                { number: "2015", label: "Founded\nin Sydney", icon: <Building className="h-4 w-4 sm:h-5 sm:w-5" /> }
-              ].map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="flex justify-center mb-2 text-blue-500">
-                    {item.icon}
-                  </div>
-                  <div className="text-xl sm:text-2xl font-bold text-gray-900">{item.number}</div>
-                  <div className="text-xs sm:text-sm text-gray-600 whitespace-pre-line">{item.label}</div>
-                </div>
-              ))}
-            </div>
+       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-3 pt-6 lg:pt-8 max-w-[80%] mx-auto lg:mx-0 lg:ml-0">
+  {[
+    { number: "11th", label: "Year Boomi\nPartner", icon: <Award className="h-4 w-4 sm:h-5 sm:w-5" /> },
+    { number: "3", label: "Countries\nServed", icon: <Globe className="h-4 w-4 sm:h-5 sm:w-5" /> },
+    { number: "6+", label: "SaaS\nPlatforms", icon: <Database className="h-4 w-4 sm:h-5 sm:w-5" /> },
+    { number: "2015", label: "Founded\nin Sydney", icon: <Building className="h-4 w-4 sm:h-5 sm:w-5" /> }
+  ].map((item, index) => (
+    <div key={index} className="text-center">
+      <div className="flex justify-center mb-2 text-blue-500">
+        {item.icon}
+      </div>
+      <div className="text-xl sm:text-2xl font-bold text-gray-900">{item.number}</div>
+      <div className="text-xs sm:text-sm text-gray-600 whitespace-pre-line">{item.label}</div>
+    </div>
+  ))}
+</div>
           </div>
 
           {/* Hero Visual - Video Container */}

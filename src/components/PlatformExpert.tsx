@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { 
-  ArrowRight, 
+  ArrowRight, ArrowDown,
   CheckCircle
 } from 'lucide-react';
 import Image from "next/image";
@@ -131,54 +131,67 @@ const PlatformExpert: React.FC = () => {
           <Badge className="mb-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 px-4 py-2">
             🚀 Platform Expertise
           </Badge>
-          <h2 className="text-6xl md:text-5xl font-bold text-gray-900 mb-8 mt-4 height-auto leading-tight">
-            Your Trusted SaaS Partner Across 
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
-              Three Strategic Markets
-            </span>
-          </h2>
+         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 mt-4 height-auto leading-tight">
+  Your Trusted SaaS Partner Across 
+  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
+    Three Strategic Markets
+  </span>
+</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We're the specialized consulting firm that Japanese businesses rely on for SaaS implementations 
-            that work seamlessly across Japan, Australia, and Vietnam. Our deep understanding of Japanese 
-            business culture combined with multi-market technical expertise ensures your technology 
-            investments deliver the growth you need in every region.
+            We're a boutique IT consulting firm that Japanese businesses trust for SaaS implementations 
+            across Japan, Australia, and Vietnam. Our deep understanding of Japanese 
+            business culture combined with deep technical expertise ensures your technology 
+            investments deliver the growth you need.
           </p>
         </div>
 
         {/* Geographic Coverage Visual */}
-        <div className="flex justify-center mb-16">
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-blue-100">
-            <div className="flex items-center justify-center space-x-8">
-               <div className="text-center flex flex-col items-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm">
-                   <Image src={japanFlag} width={40} height={40} alt="japan flag" className="rounded-sm" />
-                </div>
-                <div className="font-semibold text-gray-800">Japan</div>
-                <div className="text-sm text-gray-600">Home Base</div>
-              </div>
-              <div className="flex items-center">
-                <ArrowRight className="h-6 w-6 text-gray-400" />
-              </div>
-               <div className="text-center flex flex-col items-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm">
-                       <Image src={australiaFlag} width={40} height={40} alt="australian flag" className="rounded-sm" />
-                </div>
-                <div className="font-semibold text-gray-800">Australia</div>
-                <div className="text-sm text-gray-600">Expansion Hub</div>
-              </div>
-              <div className="flex items-center">
-                <ArrowRight className="h-6 w-6 text-gray-400" />
-              </div>
-              <div className="text-center flex flex-col items-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm">
-                      <Image src={vietnamFlag} width={40} height={40} alt="vietnam flag" className="rounded-sm" />
-                </div>
-                <div className="font-semibold text-gray-800">Vietnam</div>
-                <div className="text-sm text-gray-600">Operations Center</div>
-              </div>
-            </div>
-          </div>
+   <div className="flex justify-center mb-16 px-4">
+  <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 border border-blue-100 w-full max-w-4xl">
+    <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-6 md:space-y-0">
+      
+      {/* Japan */}
+      <div className="text-center flex flex-col items-center">
+        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm">
+          <Image src={japanFlag} width={30} height={30} alt="japan flag" className="rounded-sm sm:w-10 sm:h-10" />
         </div>
+        <div className="font-semibold text-gray-800 text-sm sm:text-base">Japan</div>
+        <div className="text-xs sm:text-sm text-gray-600">Home Base</div>
+      </div>
+      
+      {/* Arrow */}
+      <div className="flex items-center justify-center md:flex-none">
+        <ArrowDown className="h-6 w-6 text-gray-400 md:hidden" />
+        <ArrowRight className="h-6 w-6 text-gray-400 hidden md:block" />
+      </div>
+      
+      {/* Australia */}
+      <div className="text-center flex flex-col items-center">
+        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm">
+          <Image src={australiaFlag} width={30} height={30} alt="australian flag" className="rounded-sm sm:w-10 sm:h-10" />
+        </div>
+        <div className="font-semibold text-gray-800 text-sm sm:text-base">Australia</div>
+        <div className="text-xs sm:text-sm text-gray-600">Expansion Hub</div>
+      </div>
+      
+      {/* Arrow */}
+      <div className="flex items-center justify-center md:flex-none">
+        <ArrowDown className="h-6 w-6 text-gray-400 md:hidden" />
+        <ArrowRight className="h-6 w-6 text-gray-400 hidden md:block" />
+      </div>
+      
+      {/* Vietnam */}
+      <div className="text-center flex flex-col items-center">
+        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mb-3 shadow-sm">
+          <Image src={vietnamFlag} width={30} height={30} alt="vietnam flag" className="rounded-sm sm:w-10 sm:h-10" />
+        </div>
+        <div className="font-semibold text-gray-800 text-sm sm:text-base">Vietnam</div>
+        <div className="text-xs sm:text-sm text-gray-600">Operations Center</div>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
         {/* Platform Grid */}
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
