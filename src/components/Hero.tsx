@@ -16,9 +16,9 @@ const Hero = () => {
           {/* Text Content */}
           <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
             <div className="space-y-4 lg:space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 The SaaS Experts Japanese Businesses Trust Across 
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 font-bold text-4xl sm:text-5xl md:text-6xl lg:text-6xl">
                   Asia Pacific
                 </span>
               </h1>
