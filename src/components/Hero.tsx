@@ -5,7 +5,7 @@ import { Lightbulb, FileText, Award, Globe, Database, Building } from 'lucide-re
 
 const Hero = () => {
   return (
-    <section className="pt-40 sm:pt-32 lg:pt-44 pb-20 lg:pb-30 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="pt-40 sm:pt-32 lg:pt-60 pb-20 lg:pb-30 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-cyan-500/5 to-transparent"></div>
       <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"></div>

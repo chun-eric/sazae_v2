@@ -147,7 +147,7 @@ const PlatformExpert: React.FC = () => {
 
         {/* Geographic Coverage Visual */}
    <div className="flex justify-center mb-16 px-4">
-  <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 border border-blue-100 w-full max-w-4xl">
+  <div className=" p-4 sm:p-6 md:p-8  w-full max-w-2xl">
     <div className="flex flex-col md:flex-row md:items-center md:justify-center md:space-x-8 space-y-6 md:space-y-0">
       
       {/* Japan */}

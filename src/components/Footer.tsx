@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
           
-          <div className="">
+          <div className="mt-6">
             <h3 className="text-lg font-semibold mb-6 text-white">Services</h3>
             <ul className="space-y-3 text-gray-400">
               <li className="hover:text-blue-400 transition-colors cursor-pointer text-sm">
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           
-          <div>
+          <div className="mt-6">
             <h3 className="text-lg font-semibold mb-6 text-white">Sazae</h3>
             <ul className="space-y-3 text-gray-400">
               <li className="hover:text-blue-400 transition-colors cursor-pointer text-sm">

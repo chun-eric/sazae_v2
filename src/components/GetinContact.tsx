@@ -15,7 +15,7 @@ const GetinContact = () => {
   return   (
        
         <div className="text-center pt-16 pb-16 px-6">
-          <div className="bg-white rounded-2xl shadow-lg p-8 border border-blue-100 md:max-w-4xl mx-auto max-w-xl pb-12">
+          <div className="bg-white rounded-2xl shadow-sm p-8 border border-blue-100 md:max-w-4xl mx-auto max-w-xl pb-12">
             <h3 className="text-2xl font-bold text-gray-900 mb-4 pt-4">
               Ready to Scale Your Japanese Business Globally?
             </h3>
